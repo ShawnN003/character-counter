@@ -58,10 +58,14 @@ public class CharacterFrequencyCounter {
      * @param c the character to calculate the relative percentage for
      * @return the relative percentage of the character's occurrence in the string
      */
-    public double getRelativePercentage(char c) {
+    public double getRelativePercentage(char c) 
+    {
         c = Character.toLowerCase(c);
-        int charCount = frequencyMap.get(c);
-
+        int charCount = 0;
+        if(frequencyMap.get(c) != null)
+        {
+            charCount = frequencyMap.get(c);
+        }
         return ((double) charCount / totalCharacterCount) * 100;
     }
 }
